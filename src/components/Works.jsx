@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Development from './Development';
-import ProductDesign from './ProductDesign';
-import WebDesign from './WebDesign';
-
-const data = [
-	'Web Design',
-	'Development',
-	'Illustration',
-	'Product Design',
-	'Social Media',
-];
+import GitTube from './GitTube';
+import FullFreak from './FullFreak';
 
 const Section = styled.div`
 	height: 100vh;
@@ -90,33 +81,73 @@ const ListItem = styled.li`
 	}
 `;
 
+const Title = styled.h1`
+	font-size: 74px;
+	color: white;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 60px;
+	}
+`;
+
+const WhatWeDo = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 10px;
+`;
+
+const Line = styled.img`
+	height: 5px;
+`;
+
+const Subtitle = styled.h2`
+	color: #da4ea2;
+`;
+
+const Link = styled.a`
+	text-decoration: none;
+`;
+
 const Right = styled.div`
 	flex: 1;
 `;
 
 const Works = () => {
-	const [work, setWork] = useState('Web Design');
+	const [work, setWork] = useState('FullFreak Inc.');
 	return (
 		<Section>
 			<Container>
 				<Left>
 					<List>
-						{data.map((item) => (
+						<Title>Works</Title>
+						<WhatWeDo>
+							<Line src='./img/line.png' />
+							<Subtitle>What I've worked on</Subtitle>
+						</WhatWeDo>
+						{/* {data.map((item) => (
 							<ListItem key={item} text={item} onClick={() => setWork(item)}>
 								{item}
 							</ListItem>
-						))}
+						))} */}
+						<Link href='https://www.fullfreak.games/games' target='_blank'>
+							<ListItem
+								text={'FullFreak Inc.'}
+								onMouseEnter={() => setWork('FullFreak Inc.')}
+							>
+								FullFreak Inc.
+							</ListItem>
+						</Link>
+						<Link href='https://github.com/jaenanigans/gittube' target='_blank'>
+							<ListItem
+								text={'GitTube'}
+								onMouseEnter={() => setWork('GitTube')}
+							>
+								GitTube
+							</ListItem>
+						</Link>
 					</List>
 				</Left>
-				<Right>
-					{work === 'Web Design' ? (
-						<WebDesign />
-					) : work === 'Development' ? (
-						<Development />
-					) : (
-						<ProductDesign />
-					)}
-				</Right>
+				<Right>{work === 'FullFreak Inc.' ? <FullFreak /> : <GitTube />}</Right>
 			</Container>
 		</Section>
 	);

@@ -1,8 +1,8 @@
+import React, { Suspense } from 'react';
 import { OrbitControls, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense } from 'react';
 import styled from 'styled-components';
-import Pikachu from './Pikachu';
+import Snorlax from './Snorlax';
 
 const Desc = styled.div`
 	width: 200px;
@@ -11,7 +11,7 @@ const Desc = styled.div`
 	background-color: white;
 	border-radius: 10px;
 	position: absolute;
-	top: 100px;
+	bottom: 200px;
 	right: 100px;
 
 	@media only screen and (max-width: 768px) {
@@ -23,23 +23,20 @@ const Desc = styled.div`
 	}
 `;
 
-const WebDesign = () => {
+const GitTube = () => {
 	return (
 		<>
 			<Canvas>
 				<Suspense fallback={null}>
-					<Stage environment='city' intensity={0.6}>
-						<Pikachu />
+					<Stage environment='city' intensity={0.05}>
+						<Snorlax />
 					</Stage>
 					<OrbitControls enableZoom={false} autoRotate />
 				</Suspense>
 			</Canvas>
-			<Desc>
-				We design products with a strong focus on both world class design and
-				ensuring your product is a market success.
-			</Desc>
+			<Desc>Stream and upload your favorite videos.</Desc>
 		</>
 	);
 };
 
-export default WebDesign;
+export default GitTube;

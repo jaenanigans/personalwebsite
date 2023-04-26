@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import Vcr from './Vcr';
 import styled from 'styled-components';
 
 const Desc = styled.div`
@@ -28,7 +27,6 @@ const Development = () => {
 		<>
 			<Canvas camera={{ position: [0, 0, 10] }}>
 				<Suspense fallback={null}>
-					<Vcr />
 					<OrbitControls enableZoom={false} autoRotate />
 				</Suspense>
 			</Canvas>

@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
 import { OrbitControls, Stage } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import Shoe from './Shoe';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
+import Pikachu from './Pikachu';
 
 const Desc = styled.div`
 	width: 200px;
@@ -11,7 +11,7 @@ const Desc = styled.div`
 	background-color: white;
 	border-radius: 10px;
 	position: absolute;
-	bottom: 200px;
+	top: 100px;
 	right: 100px;
 
 	@media only screen and (max-width: 768px) {
@@ -23,23 +23,20 @@ const Desc = styled.div`
 	}
 `;
 
-const ProductDesign = () => {
+const FullFreak = () => {
 	return (
 		<>
 			<Canvas>
 				<Suspense fallback={null}>
-					<Stage environment='city' intensity={0.6}>
-						<Shoe />
+					<Stage environment='city' intensity={0.1}>
+						<Pikachu />
 					</Stage>
 					<OrbitControls enableZoom={false} autoRotate />
 				</Suspense>
 			</Canvas>
-			<Desc>
-				We design products with a strong focus on both world class design and
-				ensuring your product is a market success.
-			</Desc>
+			<Desc>Play multiple mini-games inspired by Pokemon</Desc>
 		</>
 	);
 };
 
-export default ProductDesign;
+export default FullFreak;

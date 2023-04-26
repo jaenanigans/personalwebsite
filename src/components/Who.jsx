@@ -67,17 +67,6 @@ const Desc = styled.p`
 	color: lightgray;
 `;
 
-const Button = styled.button`
-	background-color: #da4ea2;
-	color: white;
-	font-weight: 500;
-	width: 120px;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-`;
-
 const Who = () => {
 	return (
 		<Section>
@@ -96,13 +85,14 @@ const Who = () => {
 					<Title>About Me</Title>
 					<WhatWeDo>
 						<Line src='./img/line.png' />
-						<Subtitle>Jae Shin (That's Me!)</Subtitle>
+						<Subtitle>Jae Shin</Subtitle>
 					</WhatWeDo>
 					<Desc>
-						a creative group of designers and developers with a passion for the
-						arts.
+						My name is Jae, or Jay if you're a Starbucks barista. I'm a
+						Full-Stack Software Engineer with a background in copywriting. I'm
+						seeking to merge my creativity with PERN stack development to create
+						enriching solutions and apps while expanding my technical skills.
 					</Desc>
-					<Button>See our works</Button>
 				</Right>
 			</Container>
 		</Section>
